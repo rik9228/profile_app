@@ -44,6 +44,39 @@ input['type="text"'] {
   margin-top: 16px;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.prev {
+  width: 16px;
+  height: 16px;
+  border-right: 2px solid #000000;
+  border-top: 2px solid #000000;
+  transform: rotate(225deg);
+  cursor: pointer;
+  margin-right: 16px;
+}
+
+.next {
+  width: 16px;
+  height: 16px;
+  border-right: 2px solid #000000;
+  border-top: 2px solid #000000;
+  transform: rotate(45deg);
+  cursor: pointer;
+  margin-left: 16px;
+}
+
+.loading {
+  width: 250px;
+  height: auto;
+  margin: 0 auto;
+}
+
 .hide {
   display: none;
 }
