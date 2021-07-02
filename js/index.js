@@ -187,13 +187,11 @@ function sortGenderHandler(e) {
   });
 }
 
-function errorHandler(datas) {
-  if (datas.length === 0) {
-    const p = document.createElement("p");
-    p.classList.add("error-text");
-    p.textContent = "データがありません";
-    body.appendChild(p);
-  }
+function createErrorText() {
+  const p = document.createElement("p");
+  p.classList.add("error-text");
+  p.textContent = "データがありません";
+  body.appendChild(p);
 }
 
 async function init(requestCount) {
@@ -203,7 +201,7 @@ async function init(requestCount) {
     articles.push(datas);
 
     if (datas.length === 0) {
-      errorHandler(datas);
+      createErrorText();
       removeLoading();
       return;
     }
