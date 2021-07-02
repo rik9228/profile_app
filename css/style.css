@@ -77,6 +77,10 @@ input['type="text"'] {
   margin: 0 auto;
 }
 
+.error-text {
+  text-align: center;
+}
+
 .hide {
   display: none;
 }
