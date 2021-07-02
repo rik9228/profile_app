@@ -7,7 +7,7 @@ const fragment = document.createDocumentFragment();
 const articles = [];
 
 async function request() {
-  const url = "https://randomuser.me/api/";
+  const url = "https://randomuser.me/apii/";
   const response = await fetch(url);
   return response.json();
 }
@@ -187,18 +187,33 @@ function sortGenderHandler(e) {
   });
 }
 
+function errorHandler(datas) {
+  if (datas.length === 0) {
+    const p = document.createElement("p");
+    p.classList.add("error-text");
+    p.textContent = "データがありません";
+    body.appendChild(p);
+  }
+}
+
 async function init(requestCount) {
   showLoading();
   for (let i = 0; i < requestCount; i++) {
     const datas = await fetchData();
     articles.push(datas);
 
+    if (datas.length === 0) {
+      errorHandler(datas);
+      removeLoading();
+      return;
+    }
+
     if (articles.length === requestCount) {
       removeLoading();
     }
   }
 
-  showPagination(articles);
+  showPagination();
   insertSelectBox();
 
   const sortButton = document.getElementById("sortButton");
@@ -207,4 +222,4 @@ async function init(requestCount) {
   });
 }
 
-init(10);
+init(5);
