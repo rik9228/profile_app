@@ -7,7 +7,7 @@ const fragment = document.createDocumentFragment();
 const articles = [];
 
 async function request() {
-  const url = "https://randomuser.me/apii/";
+  const url = "https://randomuser.me/api/";
   const response = await fetch(url);
   return response.json();
 }
