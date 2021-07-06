@@ -155,7 +155,7 @@ function showLoading() {
   const img = document.createElement("img");
   img.classList.add("loading");
   img.id = "js-loading";
-  img.src = "../img/loading-circle.gif";
+  img.src = "./img/loading-circle.gif";
   body.appendChild(img);
 }
 
@@ -220,4 +220,4 @@ async function init(requestCount) {
   });
 }
 
-init(5);
+init(20);
